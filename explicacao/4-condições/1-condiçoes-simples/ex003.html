@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detran</title>
+  <style>
+    body{
+      background-color: dimgray;
+      color: cornsilk;
+      font: 20pt Arial;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Verificador de Velocidade</h1>
+  Velocidade <input type="number" name="txtVel" id="txtVel"> km/h
+  <input type="button" value="Verificador" onclick="calcular()">
+  <div id="res">
+
+  </div>
+  <script>
+    function calcular() {
+      const velTXT = document.querySelector('input#txtVel')
+      const res = document.querySelector('div#res')
+      let vel = Number(velTXT.value)
+      if(vel > 70){
+        res.innerHTML = `<p>Você foi <strong>MULTADO!</strong> Você</p>`
+      }
+      res.innerHTML += `Dirija com segurança!`
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pais</title>
+  <style>
+    body{
+      background-color: darkgrey;
+      color: darkslategrey;
+      font: 20pt Arial;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Verificador de PAIS</h1>
+  Coloque seu Pais: <input type="text" name="pais" id="pais">
+  <input type="button" value="enviar" onclick="enviar()">
+  <div id="res">
+
+  </div>
+  <script>
+    function enviar(){
+      const paisOrigel = document.querySelector("#pais").value.trim().toUpperCase() //precisa colocar o VAlUE para aparecer o resultado em TXT
+      const res = document.querySelector("div#res")
+      if(paisOrigel != "BRASIL"){
+        res.innerHTML = `Você mora em <strong>${paisOrigel}!</strong> Você é um estranjeiro!`
+      } else{
+        res.innerHTML = `Você é <strong>BRASILEIRO!</strong>`
+      }
+    }
+  </script>
+</body>
+</html>

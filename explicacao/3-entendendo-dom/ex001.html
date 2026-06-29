@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>introdução do DOM</title>
+  <style>
+    body {
+      background-color: aqua;
+      color: aliceblue;
+      font: normal 18pt Arial;
+    }
+  </style>
+</head>
+<body>
+  <h1>Iniciando estudos do DOM</h1>
+  <p>Aqui vai o resultado</p>
+  <p>Aprendendo a usar o <strong>DOM</strong> em javaScript</p>
+  <div id="msg">Clique em mim</div>
+
+  <script>
+    const p1 = window.document.getElementsByTagName("p")[0]
+    /*
+    const d = window.document.getElementById("msg")
+    window.document.write(`Esta escrito: ${p1.innerText}`) //METEDO ANTIGO 
+    d.style.color = 'green'
+    */
+    const d = window.document.querySelector("div#msg")//METODO MAIS RECENSTE (# = ELE SELECIONA A DIV) (. = SELECIONA A CLASS)
+
+  </script>
+</body>
+</html>
