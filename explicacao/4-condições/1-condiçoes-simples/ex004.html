@@ -24,6 +24,7 @@
     function enviar(){
       const paisOrigel = document.querySelector("#pais").value.trim().toUpperCase() //precisa colocar o VAlUE para aparecer o resultado em TXT
       const res = document.querySelector("div#res")
+      
       if(paisOrigel != "BRASIL"){
         res.innerHTML = `Você mora em <strong>${paisOrigel}!</strong> Você é um estranjeiro!`
       } else{

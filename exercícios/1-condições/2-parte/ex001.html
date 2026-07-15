@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de idade</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="quadrado">
+      <img id="foto" src="img/semfoto.jpg" alt="imagem">
+      <p id="nascimento">
+        Ano de nascimento:
+        <input type="number" min="1900" max="2100" id="ano"> 
+      </p>
+      <p>
+        Sexo:
+        <input type="radio" name="sexo" id="masc" value="Masculino">
+        <label for="masc">Homen</label>
+
+        <input type="radio" name="sexo" id="femin" value="Feminino">
+        <label for="famin">Feminino</label>
+      </p>
+      <input type="button" value="Vericar" onclick="vericar()">
+    </div>
+  </div>
+
+  <script>
+    function vericar(){
+      const momento = new Date()
+
+      const foto = document.querySelector("#foto")
+      const sexo = document.getElementsByName("sexo")
+      
+      const anoAtual = momento.getFullYear()
+      const nascimento = Number(document.querySelector("#ano").value)
+
+      const idade = anoAtual - nascimento
+      
+      if(sexo[0].checked){ //masculino
+        if(idade < 12){
+          foto.src = "img/menino.jpg"
+        }else if(idade < 60){
+          foto.src = "img/homen.jpg"
+        }else{
+          foto.src = "img/idoso.jpg"
+        }
+      }else if(sexo[1].checked){ //feminino
+
+        if(idade <12){
+          foto.src = "img/menina.jpg"
+        }else if(idade < 60){
+          foto.src = "img/mulher.jpg"
+        }else{
+          foto.src = "img/idosa.jpg"
+        }
+      }else{
+        alert("Selecione um sexo.")
+      }
+    }
+  </script>
+</body>
+</html>

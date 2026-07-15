@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momento do dia</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="quadrado">
+      <img id="foto" src="img/dia.jpg" alt="imagem">
+      <p id="res">Aguardando...</p>
+    </div>
+  </div>
+
+  <script>
+    const momento = new Date()
+    const hora = momento.getHours()
+    const min = momento.getMinutes()
+    const res = document.querySelector("#res")
+    const foto = document.querySelector("#foto")
+
+    if(hora < 12){
+
+      document.body.style.background = "#f6d365"
+      foto.src = "img/dia.jpg"
+      res.innerHTML = `Bom dia! Agora são ${hora}:${min}.`
+
+    } else if(hora < 17){
+      document.body.style.background = "#ff914d"
+      foto.src = "img/Entardecer.jpg"
+      res.innerHTML = `Boa tarde! Agora são ${hora}:${min}.`
+
+    } else{
+      document.body.style.background = "#1f2a44"
+      foto.src = "img/noite.jpg"
+      res.innerHTML = `Boa noite! Agora são ${hora}:${min}.`
+
+    }
+    
+  </script>
+</body>
+</html>
