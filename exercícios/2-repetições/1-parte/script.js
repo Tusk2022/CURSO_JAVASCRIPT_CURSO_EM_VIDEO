@@ -12,7 +12,7 @@ function contar() {
     const passo = Number(passotxt)
 
     if(passo <= 0){
-      alert("[ERRO] Considerando o PASSO em 1")
+      alert("[ERRO] Considerando o PASSO em 1") 
       passo = 1
     }
 
